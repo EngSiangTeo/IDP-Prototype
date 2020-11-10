@@ -42,6 +42,19 @@
 		var down = false;
 		$(document).ready(function(){
 
+			var movement = [{top: 107, left: 1003},{top: 106, left:1441},{top: 217, left:1441},{top: 317, left:1507},{top: 217, left:1441},{top: 317, left:1760},];
+			var counter = 0;
+
+			$("#sitemap").click(function(){
+				counter += 1;
+				counter = counter % 6;
+				$("#box").animate({
+					top: movement[counter].top,
+					left: movement[counter].left
+				}, 2000, function() {
+				    // Animation complete.
+				});
+			});
 
 			$("#box").bind({
 				mousedown: function(){
